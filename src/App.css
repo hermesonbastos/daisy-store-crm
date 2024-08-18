@@ -2,3 +2,17 @@
   margin: 0px;
   padding: 0px
 }
+
+:root {
+  --daisy-primary: "#C4344C";
+  --daisy-secondary: "#FFE4EE";
+  --daisy-pink2: "#FF9EC2";
+  --daisy-pink3: "#FCC0D6";
+  --daisy-pink4: "#FFD1E2";
+  --daisy-pink5: "#FEEDF3";
+  --daisy-pink6: "#FFF5F9";
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
