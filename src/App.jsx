@@ -4,7 +4,7 @@ import Input from './components/Input/Input'
 function App() {
 
   return (
-    <Input></Input>
+    <Input>asldkfhlsakdhf</Input>
   )
 }
 
