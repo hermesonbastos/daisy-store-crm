@@ -1,0 +1,16 @@
+.input-container {
+  padding: 1rem;
+  border: 2px solid var(--daisy-pink5);
+  background-color: transparent;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.input-input {
+  border: none;
+  background-color: transparent;
+}
+
+.input-input:focus {
+  border: none;
+}
