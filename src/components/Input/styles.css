@@ -9,8 +9,29 @@
 .input-input {
   border: none;
   background-color: transparent;
+  color: var(--daisy-pink6);
+}
+
+.input-input::-webkit-input-placeholder {
+  color: var(--daisy-pink6);
+  font: 12px verdana, arial, sans-serif;
 }
 
 .input-input:focus {
   border: none;
+}
+
+.input-label{
+  position: relative;
+}
+
+.input-span{
+  position: absolute;
+  top: -28px;
+  background-color: var(--daisy-pink6);
+  color: var(--daisy-primary);
+  padding: 2px;
+  font-size: x-small;
+  width: 40px;
+  text-align: center;
 }
