@@ -1,0 +1,9 @@
+#btn{
+   width: 280px;
+   height: 40px;
+   border-radius: 20px;
+   border: 2px solid var(--daisy-pink5);   
+   color: var(--daisy-primary); 
+   font-weight: bold;
+   cursor: pointer;
+}

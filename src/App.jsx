@@ -1,10 +1,10 @@
 import './App.css'
-import Input from './components/Input/Input'
+import Login from './components/pages/Login/Login.jsx'
 
 function App() {
 
   return (
-    <Input>asldkfhlsakdhf</Input>
+    <Login />
   )
 }
 
