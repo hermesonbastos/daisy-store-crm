@@ -2,8 +2,12 @@ import Input from '../../Input/Input'
 import logo from '../../../assets/logo.png'
 import Button from '../../Button/Button'
 import './styles.css'
+import useLogin from './useLogin'
 
 const Login = () =>{
+
+    const { login } = useLogin();
+
     return (
         <div className='frame'>
             <div className='banner'>
@@ -13,7 +17,7 @@ const Login = () =>{
                 <Input name = "E-MAIL" placeholder="Digite seu email..." type="email"/>
                 <Input name = "SENHA" placeholder="Digite sua senha..." type="password"/>
                 <div id='button-text'>
-                    <Button name = "LOGIN"/>
+                    <Button name = "LOGIN" onClick={login}/>
                     <a>Não possui uma conta? Cadastre-se</a>
                 </div>
             </div>

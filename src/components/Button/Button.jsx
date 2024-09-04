@@ -1,16 +1,11 @@
 import './styles.css'
-import PropTypes from "prop-types"
 
-const Button = ({name = "default"}) => {
+const Button = ({name = "default", onClick}) => {
     return(
         <div>
-            <button id='btn'>{name}</button>
+            <button id='btn' onClick={() => onClick()}>{name}</button>
         </div>
     )
 }
-
-Button.propTypes = {
-    name: PropTypes.string,
-  };
 
 export default Button;
