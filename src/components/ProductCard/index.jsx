@@ -7,11 +7,7 @@ const ProductCard = ({ product }) => {
             <div className="product-card-img">
                 <img
                     className="product-img"
-                    src={
-                        product?.images[0]?.image?.link
-                            ? product?.images[0]?.image?.link
-                            : "/src/assets/camisa.jpeg"
-                    }
+                    src="/src/assets/camisa.jpeg"
                     alt=""
                 />
             </div>
@@ -21,12 +17,12 @@ const ProductCard = ({ product }) => {
                 </div>
                 <div className="product-data">
                     <span className="product-data--number">
-                        N.º {product?.id}
+                        N.º {product?.id ? product?.id : "2"}
                     </span>
-                    <span className="product-data--name">{product?.name}</span>
-                    <span className="product-data--stock">Em estoque: {product?.stock}</span>
+                    <span className="product-data--name">{product?.name ? product?.name : "Nome do produto"}</span>
+                    <span className="product-data--stock">Em estoque: {product?.stock ? product?.stock : "10"}</span>
                 </div>
-                <div className="product-price">R$ {product?.price}</div>
+                <div className="product-price">R$ {product?.price ? product?.price : "10.99"}</div>
             </div>
         </div>
     );

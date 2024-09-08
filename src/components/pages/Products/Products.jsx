@@ -5,6 +5,8 @@ import ProductCard from "../../ProductCard"
 import './styles.css'
 import { GET_PRODUCTS } from "../../../api";
 
+const products = [{}, {}, {}, {}, {}];
+
 const Products = () => {
 
   const { data, error, loading, request } = useFetch();
@@ -14,7 +16,7 @@ const Products = () => {
     request(url, options);
   }, [request]);
 
-  const products = data || [];
+  // const products = data || [];
   console.log(products)
 
   return (

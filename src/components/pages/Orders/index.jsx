@@ -1,5 +1,6 @@
 import Container from "../../Layout/Container";
 import OrderCard from "../../OrderCard";
+import './styles.css';
 
 const orders = [{}, {}, {}, {}, {}];
 

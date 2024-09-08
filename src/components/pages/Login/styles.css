@@ -5,10 +5,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--daisy-secondary);
 }
 
 .banner{
-    background-color: var(--daisy-secondary);
     height: 45%;
     width: 100%;
     display: flex;
