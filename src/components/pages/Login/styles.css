@@ -29,6 +29,19 @@
     gap: 30px;
 }
 
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+    .form-content {
+        width: 60%;
+    }
+}
+
 #logo{
     margin-left: 40px;
 }

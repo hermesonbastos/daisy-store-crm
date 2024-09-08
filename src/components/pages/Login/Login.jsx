@@ -14,11 +14,13 @@ const Login = () =>{
                 <img id="logo" src={logo} alt="logo" />
             </div>
             <div className='form'>
-                <Input name = "E-MAIL" placeholder="Digite seu email..." type="email"/>
-                <Input name = "SENHA" placeholder="Digite sua senha..." type="password"/>
-                <div id='button-text'>
-                    <Button name = "LOGIN" onClick={login}/>
-                    <a>Não possui uma conta? Cadastre-se</a>
+                <div className='form-content'>
+                    <Input name = "E-MAIL" placeholder="Digite seu email..." type="email"/>
+                    <Input name = "SENHA" placeholder="Digite sua senha..." type="password"/>
+                    <div id='button-text'>
+                        <Button name = "LOGIN" onClick={login}/>
+                        <a>Não possui uma conta? Cadastre-se</a>
+                    </div>
                 </div>
             </div>
         </div>
