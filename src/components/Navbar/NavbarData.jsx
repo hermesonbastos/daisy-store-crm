@@ -9,6 +9,12 @@ export const NavBarData = [
     onClick: () => {},
   },
   {
+    title: "Pedidos",
+    path: "/orders",
+    icon: <FaIcons.FaShoppingCart style={{ color: "#C4344C" }} />,
+    cName: "nav-text",
+  },
+  {
     title: "Logout",
     path: "/",
     icon: <FaIcons.FaSignOutAlt style={{ color: "#C4344C" }} />,

@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { UserContext } from "./contexts/UserContext.jsx";
 import Products from "./components/pages/Products/Products.jsx";
 import Protected from "./utils/Protected.jsx";
+import Orders from "./components/pages/Orders/index.jsx";
 
 function App() {
     const { isAuthenticated } = useContext(UserContext);
@@ -16,6 +17,8 @@ function App() {
             {isAuthenticated && location.pathname !== "/" && <Navbar />}
             <Routes>
                 <Route path="/" element={<Login />} />
+
+                <Route path="/orders" element={<Orders />} />
 
                 <Route
                     path="/products"
