@@ -1,14 +1,18 @@
 import Container from "../../Layout/Container";
 import OrderCard from "../../OrderCard";
+import './styles.css';
 
-const orders = [{}, {}, {}, {}, {}];
+const orders = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
 
 const Orders = () => {
     return (
         <Container>
-            {orders.map((order, index) => {
-                return <OrderCard />;
-            })}
+            <h2>Pedidos</h2>
+            <div className="order-content">
+                {orders.map((order, index) => {
+                    return <OrderCard />;
+                })}
+            </div>
         </Container>
     );
 };

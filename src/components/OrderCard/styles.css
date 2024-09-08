@@ -1,0 +1,39 @@
+.order-card{
+    background-color: var(--daisy-pink4);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    gap: 200px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); 
+    color:var(--daisy-brown);
+}
+
+.order-card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+}
+
+.order-card-data{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+}
+
+@media (max-width: 768px) {
+    .order-card {
+        padding: 12px 16px;
+        gap: 4px;
+      }
+    
+      .order-card-content {
+        flex: 1;
+      }
+    
+      .order-card-data {
+        gap: 5px;
+        margin-right: 20px;
+      }
+}
