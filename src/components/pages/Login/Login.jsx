@@ -15,11 +15,11 @@ const Login = () =>{
             </div>
             <div className='form'>
                 <div className='form-content'>
-                    <Input name = "E-MAIL" placeholder="Digite seu email..." type="email"/>
-                    <Input name = "SENHA" placeholder="Digite sua senha..." type="password"/>
+                    <Input label="E-MAIL" placeholder="Digite seu email..." type="email"/>
+                    <Input label="SENHA" placeholder="Digite sua senha..." type="password"/>
                     <div id='button-text'>
                         <Button name = "LOGIN" onClick={login}/>
-                        <a>Não possui uma conta? Cadastre-se</a>
+                        <a>Esqueceu a senha?</a>
                     </div>
                 </div>
             </div>
