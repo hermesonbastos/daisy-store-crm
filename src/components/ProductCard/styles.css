@@ -10,6 +10,7 @@
   color: var(--daisy-brown);
   border-radius: 10px;
   gap: 24px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .product-card img {

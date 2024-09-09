@@ -4,12 +4,18 @@ import Container from "../../Layout/Container"
 import ProductCard from "../../ProductCard"
 import './styles.css'
 import { GET_PRODUCTS } from "../../../api";
+import Button from "../../Button/Button"
+import PageTitle from "../../PageTitle"
+import { FaPlus } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 
 const products = [{}, {}, {}, {}, {}];
 
 const Products = () => {
 
   const { data, error, loading, request } = useFetch();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const { url, options } = GET_PRODUCTS();
@@ -22,6 +28,12 @@ const Products = () => {
   return (
   <Container>
     <div className="products-list">
+      <dir className="products-list-header">
+        <PageTitle title="Produtos" />
+        <div>
+          <Button icon={<FaPlus />} name="Adicionar" variant="secondary" onClick={() => navigate('/products/create')} />
+        </div>
+      </dir>
       {products.map((product, index) => {
         return (
           <ProductCard key={index} product={product} />

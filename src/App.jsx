@@ -7,6 +7,7 @@ import { UserContext } from "./contexts/UserContext.jsx";
 import Products from "./components/pages/Products/Products.jsx";
 import Protected from "./utils/Protected.jsx";
 import Orders from "./components/pages/Orders/index.jsx";
+import CreateProduct from "./components/pages/CreateProduct/index.jsx";
 
 function App() {
     const { isAuthenticated } = useContext(UserContext);
@@ -25,6 +26,17 @@ function App() {
                     element={
                         <Protected>
                             <Products />
+                        </Protected>
+                    }
+                >
+                    
+                </Route>
+
+                <Route
+                    path="/products/create"
+                    element={
+                        <Protected>
+                            <CreateProduct />
                         </Protected>
                     }
                 />

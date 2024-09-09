@@ -1,5 +1,6 @@
 import Container from "../../Layout/Container";
 import OrderCard from "../../OrderCard";
+import PageTitle from "../../PageTitle";
 import './styles.css';
 
 const orders = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -7,7 +8,7 @@ const orders = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
 const Orders = () => {
     return (
         <Container>
-            <h2>Pedidos</h2>
+            <PageTitle title="Pedidos" />
             <div className="order-content">
                 {orders.map((order, index) => {
                     return <OrderCard />;

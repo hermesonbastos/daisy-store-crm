@@ -1,9 +1,16 @@
-#btn{
-   width: 280px;
-   height: 40px;
-   border-radius: 20px;
-   border: 2px solid var(--daisy-pink5);   
+.primary-button {
+   padding: 1rem 2rem;
+   width: 100%;
+   border-radius: 10px;
+   border: none;
    color: var(--daisy-primary); 
    font-weight: bold;
+   text-transform: uppercase;
    cursor: pointer;
+   font-family: "Inter", sans-serif;
+   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+   display: flex;
+   gap: 8px;
+   align-items: center;
+   justify-content: center;
 }
