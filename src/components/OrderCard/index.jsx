@@ -1,8 +1,13 @@
 import "./styles.css"
+import { useNavigate } from "react-router-dom"
 
 const OrderCard = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {navigate("../details")}
+
   return (
-        <div className="order-card">
+        <div className="order-card" onClick={handleClick}>
           <div className="order-card-content">
             <span>N.º</span>
             <span>Nome do Cliente</span>

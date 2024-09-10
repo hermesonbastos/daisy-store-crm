@@ -18,7 +18,7 @@ const Login = () =>{
                     <Input label="E-MAIL" placeholder="Digite seu email..." type="email"/>
                     <Input label="SENHA" placeholder="Digite sua senha..." type="password"/>
                     <div id='button-text'>
-                        <Button name = "LOGIN" onClick={login}/>
+                        <Button variant="primary" name = "LOGIN" onClick={login}/>
                         <a>Esqueceu a senha?</a>
                     </div>
                 </div>

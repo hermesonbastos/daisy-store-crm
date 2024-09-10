@@ -8,6 +8,8 @@
     gap: 200px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); 
     color:var(--daisy-brown);
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .order-card-content{
