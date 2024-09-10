@@ -8,6 +8,7 @@ import Products from "./components/pages/Products/Products.jsx";
 import Protected from "./utils/Protected.jsx";
 import Orders from "./components/pages/Orders/index.jsx";
 import CreateProduct from "./components/pages/CreateProduct/index.jsx";
+import Details from "./components/pages/OrderDetails/Details.jsx"
 
 function App() {
     const { isAuthenticated } = useContext(UserContext);
@@ -20,6 +21,8 @@ function App() {
                 <Route path="/" element={<Login />} />
 
                 <Route path="/orders" element={<Orders />} />
+
+                <Route path="/details" element={<Details />}/>
 
                 <Route
                     path="/products"
