@@ -31,7 +31,7 @@ const Products = () => {
       <dir className="products-list-header">
         <PageTitle title="Produtos" />
         <div>
-          <Button icon={<FaPlus />} name="Adicionar" variant="secondary" onClick={() => navigate('/products/create')} />
+          <Button icon={<FaPlus />} name="Adicionar" variant="primary" onClick={() => navigate('/products/create')} />
         </div>
       </dir>
       {products.map((product, index) => {
