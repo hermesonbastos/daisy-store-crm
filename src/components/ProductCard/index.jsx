@@ -14,7 +14,7 @@ const ProductCard = ({ product, screen }) => {
             <div className="product-card-content">
                 {screen === "onOrder" && (
                     <div className="qtd-container">
-                        <span>x3</span>
+                        <span id="numero">x3</span>
                     </div>
                 )}
                 {screen === "onProducts" && (
