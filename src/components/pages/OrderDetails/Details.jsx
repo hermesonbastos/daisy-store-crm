@@ -3,6 +3,8 @@ import ProductCard from "../../ProductCard"
 import Button from "../../Button/Button"
 import "./styles.css"
 
+const products = [{}, {}, {}, {}, {}, {}];
+
 const Details = () => {
     return(
         <div className="details-container"> 
@@ -13,11 +15,9 @@ const Details = () => {
                     <span>Data do pedido:</span>
                 </div>
                 <div className="details-product">
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
+                    {products.map(() => {
+                        return <ProductCard screen="onOrder" />;
+                    })}
                 </div>
                 <div className="details-order">
                     <span id="span2">Total:</span>
