@@ -1,7 +1,9 @@
+import { useState } from "react";
 import useForm from "../../../hooks/useForm";
 import Input from "../../Input/Input";
 import Container from "../../Layout/Container";
 import PageTitle from "../../PageTitle";
+import Switch from "../../Switch/Switch";
 import "./styles.css";
 
 const CreateProduct = () => {
@@ -9,6 +11,12 @@ const CreateProduct = () => {
   const name = useForm();
   const description = useForm();
   const price = useForm();
+
+  const [isAvailable, setIsAvailable] = useState(false);
+
+  const toggleAvailable = () => {
+    setIsAvailable((v) => !v);
+  }
 
   return (
     <Container>
@@ -18,8 +26,9 @@ const CreateProduct = () => {
           <div className="card-main-image">
             <img className="product-img" src="/src/assets/camisa.jpeg" alt="" />
           </div>
-          <div className="card-main">
-            
+          <div className="card-main-form">
+            <Switch label="Disponível?" value={isAvailable} setValue={toggleAvailable} />
+            <Input type="number" label="Estoque" variant="secondary" />
           </div>
         </div>
         <div className="card-settings">

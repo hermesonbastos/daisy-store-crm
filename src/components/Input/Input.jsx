@@ -13,7 +13,7 @@ const Input = ({
   variant
 }) => {
   return (
-    <div>
+    <div className="input-box">
       <div className={variant !== "secondary" ? "input-container" : "input-container-secondary"}>
         <label className="input-label" htmlFor={name}>
           <span className="input-span">{label}</span>
