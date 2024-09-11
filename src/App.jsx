@@ -20,9 +20,17 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login />} />
 
-                <Route path="/orders" element={<Orders />} />
+                <Route path="/orders" element={
+                    <Protected>
+                        <Orders />
+                    </Protected>
+                } />
 
-                <Route path="/details" element={<Details />}/>
+                <Route path="/details" element={
+                    <Protected>
+                        <Details />
+                    </Protected>
+                }/>
 
                 <Route
                     path="/products"

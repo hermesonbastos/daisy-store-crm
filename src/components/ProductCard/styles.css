@@ -65,6 +65,14 @@
   transition: background-color 200ms ease-in-out;
 }
 
+.qtd-container {
+  padding: 1rem;
+  border-radius: 10px;
+  align-self: flex-end;
+  transition: color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+
 .icon-container:hover {
   color: var(--daisy-pink6);
   background-color: var(--daisy-primary);
