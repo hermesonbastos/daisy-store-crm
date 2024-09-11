@@ -15,6 +15,7 @@
     flex-direction: column;
     background-color: var(--daisy-primary);
     width: 100%;
+    height: 20%;
     border-radius: 90px 0px 0px 0px;
     margin-top: 20px;
 
@@ -39,7 +40,7 @@
 
 .details-product {
     padding: 30px;
-    margin-bottom: 140px;
+    margin-bottom: 130px;
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;   
@@ -86,7 +87,7 @@
         flex-direction: column;
         background-color: var(--daisy-primary);
         width: 100%;
-        height: 25vh;
+        height: 20%;
         border-radius: 60px 0px 0px 0px;
     }
 
@@ -95,7 +96,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-top: 30px;
+        margin-top: 20px;
         margin-left: 20px;
     }
 
@@ -108,7 +109,7 @@
         display: flex;
         gap: 15px;
         flex-direction: column;
-        margin-bottom: 220px;
+        margin-bottom: 180px;
     }
 
     #span1 {
