@@ -36,7 +36,7 @@ const Products = () => {
       </dir>
       {products.map((product, index) => {
         return (
-          <ProductCard key={index} product={product} />
+          <ProductCard key={index} product={product} screen="onProducts"/>
         )
       })}
     </div>

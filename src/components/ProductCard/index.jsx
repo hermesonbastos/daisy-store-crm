@@ -1,7 +1,12 @@
 import { FaPen } from "react-icons/fa";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product, screen }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {navigate("../products/edit")}
+
     return (
         <div className="product-card">
             <div className="product-card-img">
@@ -18,7 +23,7 @@ const ProductCard = ({ product, screen }) => {
                     </div>
                 )}
                 {screen === "onProducts" && (
-                    <div className="icon-container">
+                    <div className="icon-container" onClick={handleClick}>
                         <FaPen className="edit-icon" />
                     </div>
                 )}
