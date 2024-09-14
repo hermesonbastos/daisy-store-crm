@@ -53,10 +53,7 @@ const Login = () => {
             type="password"
             {...password}
           />
-          {error && <p className="error">{error}</p>}
-          <div id="button-text">
-            <Button name="LOGIN" disabled={loading} onClick={login} />
-          </div>
+          <Button name="LOGIN" variant="primary" disabled={loading} onClick={login} />
         </form>
       </div>
       {isAuthenticated && <p>Usuário autenticado!</p>}

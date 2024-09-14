@@ -15,6 +15,12 @@ export const NavBarData = [
     cName: "nav-text",
   },
   {
+    title: "Categorias",
+    path: "/categories",
+    icon: <FaIcons.FaTag style={{ color: "#C4344C" }} />,
+    cName: "nav-text",
+  },
+  {
     title: "Logout",
     path: "/",
     icon: <FaIcons.FaSignOutAlt style={{ color: "#C4344C" }} />,
