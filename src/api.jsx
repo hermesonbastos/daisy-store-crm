@@ -14,6 +14,12 @@ export function GET_PRODUCTS() {
   };
 }
 
+export function DETAIL_PRODUCT() {
+  return {
+    url: API_URL + "/products"
+  }
+}
+
 export function CREATE_PRODUCT(body) {
   return {
     url: API_URL + "/products",

@@ -18,7 +18,8 @@ function App() {
 
     return (
         <>
-            {isAuthenticated && location.pathname !== "/" && <Navbar />}
+            {/* {isAuthenticated && location.pathname !== "/" && <Navbar />} */}
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Login />} />
 
@@ -55,7 +56,7 @@ function App() {
                 />
 
                 <Route
-                    path="/products/edit"
+                    path="/products/edit/:id"
                     element={
                         <Protected>
                             <EditProduct />
@@ -66,9 +67,9 @@ function App() {
                 <Route
                     path="/categories"
                     element={
-                        <Protected>
+                        
                             <Categories />
-                        </Protected>
+                        
                     }
                 />
             </Routes>
