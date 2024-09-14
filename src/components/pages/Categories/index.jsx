@@ -9,7 +9,9 @@ import './styles.css';
 const Categories = () => {
   const categories = [{}, {}, {}, {}, {}, {}];
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const handleClick = () => {navigate("../categories/add")}
 
   return (
     <Container>
@@ -21,7 +23,7 @@ const Categories = () => {
               icon={<FaPlus />}
               name="Adicionar"
               variant="primary"
-              onClick={() => {}}
+              onClick={handleClick}
             />
           </div>
         </div>

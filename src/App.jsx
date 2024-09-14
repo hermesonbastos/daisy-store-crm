@@ -11,6 +11,7 @@ import CreateProduct from "./components/pages/CreateProduct/index.jsx";
 import Details from "./components/pages/OrderDetails/Details.jsx"
 import EditProduct from "./components/pages/EditProduct/index.jsx";
 import Categories from "./components/pages/Categories/index.jsx";
+import EditCategory from "./components/pages/EditCategory/index.jsx";
 
 function App() {
     const { isAuthenticated } = useContext(UserContext);
@@ -69,6 +70,15 @@ function App() {
                     element={
                         
                             <Categories />
+                        
+                    }
+                />
+
+                <Route
+                    path="/categories/edit"
+                    element={
+                        
+                            <EditCategory />
                         
                     }
                 />
