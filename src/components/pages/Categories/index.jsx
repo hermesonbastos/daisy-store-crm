@@ -3,7 +3,7 @@ import Container from "../../Layout/Container";
 import PageTitle from "../../PageTitle";
 import Button from "../../Button/Button";
 import { useNavigate } from "react-router-dom";
-import ProductCard from "../../ProductCard";
+import CategoryCard from "../../CategoryCard/index"
 import './styles.css';
 
 const Categories = () => {
@@ -13,8 +13,8 @@ const Categories = () => {
 
   return (
     <Container>
-      <div className="categories-list">
-        <dir className="categories-list-header">
+      <div className="categories-container">
+        <div className="categories-list-header">
           <PageTitle title="Categorias" />
           <div>
             <Button
@@ -24,12 +24,14 @@ const Categories = () => {
               onClick={() => {}}
             />
           </div>
-        </dir>
-        {categories.map((category, index) => {
-          return (
-            <div>Categories</div>
-          );
-        })}
+        </div>
+        <div className="categories-list">
+          {categories.map((category, index) => {
+            return (
+              <CategoryCard/>
+            );
+          })}
+        </div>
       </div>
     </Container>
   );
