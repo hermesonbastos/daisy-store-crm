@@ -9,7 +9,6 @@ import PageTitle from "../../PageTitle"
 import { FaPlus } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
 
-const products = [{}, {}, {}, {}, {}];
 
 const Products = () => {
 
@@ -22,7 +21,7 @@ const Products = () => {
     request(url, options);
   }, [request]);
 
-  // const products = data || [];
+  const products = data || [];
   console.log(products)
 
   return (

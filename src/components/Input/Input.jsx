@@ -10,7 +10,8 @@ const Input = ({
   onBlur,
   error,
   label,
-  variant
+  variant,
+  disabled
 }) => {
   return (
     <div className="input-box">
@@ -27,6 +28,7 @@ const Input = ({
           placeholder={placeholder}
           type={type}
           onBlur={onBlur}
+          disabled={disabled}
         />
       </div>
       {error && <p className="input-error">{error}</p>}
