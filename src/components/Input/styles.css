@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.input-box {
+  padding-top: 15px;
+}
+
 .input-container-secondary {
   border: 2px solid var(--daisy-primary);
   background-color: transparent;
@@ -20,6 +24,7 @@
   width: 100%;
   background-color: transparent;
   color: var(--daisy-pink6);
+  font-size: 16px;
 }
 
 .input-input-secondary {
@@ -28,6 +33,7 @@
   width: 100%;
   background-color: transparent;
   color: var(--daisy-primary);
+  font-size: 16px;
 }
 
 .input-input::-webkit-input-placeholder {
@@ -57,4 +63,14 @@
   color: #f31;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

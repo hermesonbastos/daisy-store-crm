@@ -7,7 +7,7 @@ const ProductCard = ({ product, screen }) => {
             <div className="product-card-img">
                 <img
                     className="product-img"
-                    src="/src/assets/camisa.jpeg"
+                    src={product?.images[0]?.image?.link}
                     alt=""
                 />
             </div>

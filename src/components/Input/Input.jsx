@@ -10,10 +10,11 @@ const Input = ({
   onBlur,
   error,
   label,
-  variant
+  variant,
+  disabled
 }) => {
   return (
-    <div>
+    <div className="input-box">
       <div className={variant !== "secondary" ? "input-container" : "input-container-secondary"}>
         <label className="input-label" htmlFor={name}>
           <span className="input-span">{label}</span>
@@ -27,6 +28,7 @@ const Input = ({
           placeholder={placeholder}
           type={type}
           onBlur={onBlur}
+          disabled={disabled}
         />
       </div>
       {error && <p className="input-error">{error}</p>}

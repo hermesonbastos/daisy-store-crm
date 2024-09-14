@@ -13,3 +13,29 @@ export function GET_PRODUCTS() {
     },
   };
 }
+
+export function CREATE_PRODUCT(body) {
+  return {
+    url: API_URL + "/products",
+    options: {
+      method: "POST",
+      body: body,
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  };
+}
+
+export function LOGIN(email, password) {
+  return {
+    url: API_URL + "/users/login",
+    options: {
+      method: "POST",
+      body: {
+        email,
+        password
+      },
+    },
+  };
+}
