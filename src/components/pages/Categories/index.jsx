@@ -30,7 +30,7 @@ const Categories = () => {
         <div className="categories-list">
           {categories.map((category, index) => {
             return (
-              <CategoryCard/>
+              <CategoryCard />
             );
           })}
         </div>

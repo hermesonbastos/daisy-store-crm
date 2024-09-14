@@ -10,7 +10,8 @@
     gap: 20px;
 }
 
-.category-container{
+.category-input-container {
+    padding: 10px;
     background-color: var(--daisy-secondary);
     border-radius: 20px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); 

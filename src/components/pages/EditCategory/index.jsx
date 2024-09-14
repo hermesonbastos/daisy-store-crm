@@ -4,16 +4,21 @@ import Input from "../../Input/Input"
 import Button from "../../Button/Button"
 import ProductCard from "../../ProductCard/index"
 import "./styles.css"
+import { useState } from "react"
+import ProductsModal from "../../ProductsModal/index"
 
 const products = [{}, {}, {}, {}];
 
-const EditCategory = () =>{
+const EditCategory = () => {
+    const [categoryModal, setCategoryModal] = useState(false);
+
     return(
-        <Container> 
+        <Container>
+            <ProductsModal showModal={categoryModal} setShowModal={setCategoryModal} />
             <div className="edit-category-container">
                <div className="edit-content">
                     <PageTitle title="Editar Categoria"/>
-                    <div className="category-container">
+                    <div className="category-input-container">
                         <div className="input-category-container">
                             <Input label="NOME DA CATEGORIA" type="text" variant="secondary"/>
                             <Input label="DESCRIÇÃO" type="text" variant="secondary"/>
@@ -24,7 +29,7 @@ const EditCategory = () =>{
                     <div className="products-content">
                         <PageTitle title="Produtos"/>
                         <div>
-                            <Button name="Vincular Produtos" variant="primary"/>
+                            <Button name="Vincular Produtos" variant="primary" onClick={() => setCategoryModal(true)}/>
                         </div>
                     </div>
                     <div className="edit-products-list">
