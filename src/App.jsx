@@ -9,6 +9,7 @@ import Protected from "./utils/Protected.jsx";
 import Orders from "./components/pages/Orders/index.jsx";
 import CreateProduct from "./components/pages/CreateProduct/index.jsx";
 import Details from "./components/pages/OrderDetails/Details.jsx"
+import EditProduct from "./components/pages/EditProduct/index.jsx";
 
 function App() {
     const { isAuthenticated } = useContext(UserContext);
@@ -48,6 +49,15 @@ function App() {
                     element={
                         <Protected>
                             <CreateProduct />
+                        </Protected>
+                    }
+                />
+
+                <Route
+                    path="/products/edit"
+                    element={
+                        <Protected>
+                            <EditProduct />
                         </Protected>
                     }
                 />
