@@ -1,11 +1,19 @@
 .order-content{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 20px;
     margin-top: 15px;
 }
 
 h2{
     color:var(--daisy-brown);
     font-weight: 350;
+}
+
+@media(max-width: 768px){
+    .order-content{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 }
