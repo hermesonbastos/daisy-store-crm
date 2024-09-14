@@ -33,6 +33,18 @@
   justify-content: flex-end;
 }
 
+.modal-icon{
+  font-size: 40px;
+  color: var(--daisy-brown);
+  border-radius: 10px;
+}
+
+.modal-icon:hover{
+  cursor: pointer;
+  color: var(--daisy-pink6);
+  background-color: var(--daisy-primary);
+}
+
 .modal-title{
   display: flex;
   justify-content: center;
@@ -50,11 +62,6 @@
 .modal-button{
   padding: 5px 15px;
 }
-
-
-
-
-
 
 .select-product-img {
   width: 100%;
@@ -147,4 +154,6 @@
   .icon-container {
     padding: 6px 8px;
   }
+
+  
 }

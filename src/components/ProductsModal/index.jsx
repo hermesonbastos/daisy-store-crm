@@ -31,7 +31,7 @@ const ProductsModal = ({ showModal, setShowModal }) => {
   return <div className={showModal ? "modal-container-open" : "modal-container"}>
     <div className="modal">
       <div className="modal-icon-container">
-        <IoIosClose />
+        <IoIosClose className='modal-icon'/>
       </div>
       <div className="modal-title">
         <PageTitle title="Adicionar Produtos"/>
