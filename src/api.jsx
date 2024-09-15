@@ -1,6 +1,6 @@
 export const API_URL = "http://localhost:3000";
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoZXJtZXNvbkBnbWFpbC5jb20iLCJpYXQiOjE3MjU4MTI1OTQsImV4cCI6MTcyNTg5ODk5NH0.G3bW1zS0PZYUyV8PXhH6NgnX48jnOUL7ZEeW64jH-qo";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJoZXJtZXNvbkBnbWFpbC5jb20iLCJpYXQiOjE3MjYzMzI4MTgsImV4cCI6MTcyNjQxOTIxOH0.nOhXMYz3g0K4ormAeUn-zkrbsATdLCM3iR4snMNujgA";
 
 export function GET_PRODUCTS() {
   return {
@@ -14,9 +14,15 @@ export function GET_PRODUCTS() {
   };
 }
 
-export function DETAIL_PRODUCT() {
+export function DETAIL_PRODUCT(product_id) {
   return {
-    url: API_URL + "/products"
+    url: API_URL + `/products/${product_id}`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
   }
 }
 
@@ -31,6 +37,33 @@ export function CREATE_PRODUCT(body) {
       },
     },
   };
+}
+
+export function UPDATE_PRODUCT(product_id, body) {
+  return {
+    url: API_URL + `/products/` + product_id,
+    options: {
+      method: "PUT",
+      body: body,
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  };
+}
+
+export function VALIDATE_TOKEN(token) {
+  return {
+    url: API_URL + "/users/validate",
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + token,
+      },
+      body: JSON.stringify({ token })
+    }
+  }
 }
 
 export function LOGIN(email, password) {
