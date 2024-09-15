@@ -7,7 +7,7 @@ import CategoryCard from "../../CategoryCard/index"
 import './styles.css';
 
 const Categories = () => {
-  const categories = [{}, {}, {}, {}, {}, {}];
+  const categories = [{}, {}, {}, {}, {}, {}, {}, {}];
 
   const navigate = useNavigate();
 

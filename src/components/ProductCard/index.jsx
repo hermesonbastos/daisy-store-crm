@@ -1,12 +1,9 @@
 import { FaPen } from "react-icons/fa";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
+import { MdLinkOff } from "react-icons/md";
 
-const ProductCard = ({ product, screen }) => {
-    const navigate = useNavigate();
-
-    const handleClick = () => {navigate(`../products/edit/${product?.id}`)}
-
+const ProductCard = ({ product, screen, handleClick }) => {
     return (
         <div className="product-card">
             <div className="product-card-img">
@@ -22,11 +19,16 @@ const ProductCard = ({ product, screen }) => {
                         <span id="numero">x3</span>
                     </div>
                 )}
-                {screen === "onProducts" && (
-                    <div className="icon-container" onClick={handleClick}>
-                        <FaPen className="edit-icon" />
-                    </div>
-                )}
+                
+                <div className="icon-container" onClick={handleClick}>
+                    {screen === "onProducts" && (
+                        <FaPen className="icon" />
+                    )}
+                    {screen === "onCategories" && (
+                        <MdLinkOff size={30} />
+                    )}
+                </div>
+                
                 <div className="product-data">
                     <span className="product-data--number">
                         N.º {product?.id ? product?.id : "2"}

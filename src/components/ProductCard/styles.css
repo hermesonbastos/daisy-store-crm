@@ -79,7 +79,7 @@
   background-color: var(--daisy-primary);
 }
 
-.edit-icon {
+.icon {
   font-size: 32px;
 }
 
@@ -118,7 +118,7 @@
     font-size: 20px;
   }
 
-  .edit-icon {
+  .icon {
     font-size: 18px;
   }
 

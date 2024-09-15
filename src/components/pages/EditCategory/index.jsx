@@ -29,12 +29,16 @@ const EditCategory = () => {
                     <div className="products-content">
                         <PageTitle title="Produtos"/>
                         <div>
-                            <Button name="Vincular Produtos" variant="primary" onClick={() => setCategoryModal(true)}/>
+                            <Button name="Vincular Produtos" variant="primary" onClick={() => { 
+                                setCategoryModal(true);
+                                let body = document.querySelector("body");
+                                body.style.overflow = "hidden";
+                            }}/>
                         </div>
                     </div>
                     <div className="edit-products-list">
                         {products.map((order, index) => {
-                        return <ProductCard screen="onProducts"/>;
+                        return <ProductCard screen="onCategories"/>;
                     })}
                     </div>
                </div>
