@@ -7,6 +7,7 @@ import Switch from "../../Switch/Switch";
 import { CREATE_PRODUCT } from "../../../api";
 import "./styles.css";
 import Button from "../../Button/Button";
+import DropDown from "../../DropDown/index"
 
 const CreateProduct = () => {
   const name = useForm();
@@ -128,6 +129,7 @@ const CreateProduct = () => {
               name="price"
               {...price}
             />
+            <DropDown/>
           </div>
           <Button
             name="Criar Produto"
