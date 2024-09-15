@@ -1,0 +1,159 @@
+.modal-container {
+  display: none;
+}
+
+.modal-container-open {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: var(--daisy-pink6);
+  border-radius: 20px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  height: 90%;
+}
+
+.modal-icon-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-icon{
+  font-size: 40px;
+  color: var(--daisy-brown);
+  border-radius: 10px;
+}
+
+.modal-icon:hover{
+  cursor: pointer;
+  color: var(--daisy-pink6);
+  background-color: var(--daisy-primary);
+}
+
+.modal-title{
+  display: flex;
+  justify-content: center;
+}
+
+.modal-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+  padding: 10px;
+  scrollbar-width: none;
+}
+
+.modal-button{
+  padding: 5px 15px;
+}
+
+.select-product-img {
+  width: 100%;
+}
+
+.select-product-card {
+  display: flex;
+  padding: 3rem 4rem;
+
+  background-color: var(--daisy-secondary);
+  color: var(--daisy-brown);
+  border-radius: 10px;
+  gap: 24px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.select-product-card-img{
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.select-product-img {
+  flex: 2;
+  border-radius: 10px;
+  overflow: hidden;
+  align-self: center;
+}
+
+.select-product-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.select-product-data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.select-product-data-number {
+  font-size: 15px;
+}
+
+.select-product-data-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    padding: 12px 16px;
+    gap: 4px;
+  }
+
+  .product-card-content {
+    flex: 1;
+  }
+
+  .product-data {
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .product-data--number {
+    font-size: 16px;
+  }
+  
+  .product-data--name {
+    font-size: 20px;
+  }
+  
+  .product-data--stock {
+    font-size: 16px;
+  }
+  
+  .product-price {
+    font-size: 20px;
+  }
+
+  .edit-icon {
+    font-size: 18px;
+  }
+
+  #numero{
+    font-size: 20px;
+  }
+
+  .icon-container {
+    padding: 6px 8px;
+  }
+
+  
+}
