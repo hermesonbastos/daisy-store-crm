@@ -2,19 +2,19 @@ import { FaPlus } from "react-icons/fa";
 import Container from "../../Layout/Container";
 import PageTitle from "../../PageTitle";
 import Button from "../../Button/Button";
-import { useNavigate } from "react-router-dom";
 import CategoryCard from "../../CategoryCard/index"
 import './styles.css';
+import CategoryModal from "../CategoryModal/index";
+import { useState } from "react"
 
 const Categories = () => {
   const categories = [{}, {}, {}, {}, {}, {}, {}, {}];
 
-  const navigate = useNavigate();
-
-  const handleClick = () => {navigate("../categories/add")}
+  const [categoryModal, setCategoryModal] = useState(false);
 
   return (
     <Container>
+      <CategoryModal showModal={categoryModal} setShowModal={setCategoryModal} />
       <div className="categories-container">
         <div className="categories-list-header">
           <PageTitle title="Categorias" />
@@ -23,7 +23,10 @@ const Categories = () => {
               icon={<FaPlus />}
               name="Adicionar"
               variant="primary"
-              onClick={handleClick}
+              onClick={() => { 
+                setCategoryModal(true);
+                let body = document.querySelector("body");
+                body.style.overflow = "hidden";}}
             />
           </div>
         </div>
