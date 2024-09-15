@@ -1,0 +1,18 @@
+.dropdown-button {
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--daisy-primary);
+    color: var(--daisy-pink6);
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    box-shadow: rgb(0, 0, 0, o.2);
+}
+
+.dropdown-icon{
+    font-size: 20px;
+}
+  

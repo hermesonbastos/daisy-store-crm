@@ -25,23 +25,23 @@ function App() {
                 <Route path="/" element={<Login />} />
 
                 <Route path="/orders" element={
-                    <Protected>
+                    
                         <Orders />
-                    </Protected>
+                    
                 } />
 
                 <Route path="/details" element={
-                    <Protected>
+                    
                         <Details />
-                    </Protected>
+                    
                 }/>
 
                 <Route
                     path="/products"
                     element={
-                        <Protected>
+                        
                             <Products />
-                        </Protected>
+                        
                     }
                 >
                     
@@ -50,18 +50,18 @@ function App() {
                 <Route
                     path="/products/create"
                     element={
-                        <Protected>
+                        
                             <CreateProduct />
-                        </Protected>
+                        
                     }
                 />
 
                 <Route
                     path="/products/edit/:id"
                     element={
-                        <Protected>
+                        
                             <EditProduct />
-                        </Protected>
+                        
                     }
                 />
 
