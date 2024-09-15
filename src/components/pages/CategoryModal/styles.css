@@ -36,8 +36,9 @@
 }
   
   @media (max-width: 768px) {
-    .modal {
+    .category-modal {
       width: 90%;
+      height: 50%;
     }
   }
   
