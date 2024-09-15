@@ -1,6 +1,6 @@
 export const API_URL = "http://localhost:3000";
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJoZXJtZXNvbkBnbWFpbC5jb20iLCJpYXQiOjE3MjYzMzI4MTgsImV4cCI6MTcyNjQxOTIxOH0.nOhXMYz3g0K4ormAeUn-zkrbsATdLCM3iR4snMNujgA";
+const token = localStorage.getItem("token");
 
 export function GET_PRODUCTS() {
   return {
@@ -74,6 +74,59 @@ export function LOGIN(email, password) {
       body: {
         email,
         password
+      },
+    },
+  };
+}
+
+export function CREATE_CATEGORY(body) {
+  return {
+    url: API_URL + "/categories",
+    options: {
+      method: "POST",
+      body: body,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + token,
+      },
+    },
+  };
+}
+
+
+export function GET_CATEGORIES() {
+  return {
+    url: API_URL + "/categories",
+    options: {
+      method: "GET",
+      headers: {
+        'Authorization': "Bearer " + token,
+      },
+    },
+  };
+}
+
+export function DETAIL_CATEGORY(category_id) {
+  return {
+    url: API_URL + `/categories/${category_id}`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  }
+}
+
+export function UPDATE_CATEGORY(category_id, body) {
+  return {
+    url: API_URL + `/categories/` + category_id,
+    options: {
+      method: "PUT",
+      body: body,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + token,
       },
     },
   };
