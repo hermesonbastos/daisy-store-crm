@@ -22,7 +22,6 @@ const Products = () => {
   }, [request]);
 
   const products = data || [];
-  console.log(products)
 
   return (
   <Container>

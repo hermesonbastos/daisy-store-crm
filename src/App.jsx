@@ -19,8 +19,7 @@ function App() {
 
     return (
         <>
-            {/* {isAuthenticated && location.pathname !== "/" && <Navbar />} */}
-            <Navbar />
+            {isAuthenticated && location.pathname !== "/" && <Navbar />}
             <Routes>
                 <Route path="/" element={<Login />} />
 
@@ -68,9 +67,9 @@ function App() {
                 <Route
                     path="/categories"
                     element={
-                        
+                        <Protected>
                             <Categories />
-                        
+                        </Protected>
                     }
                 />
 
