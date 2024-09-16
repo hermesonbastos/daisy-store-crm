@@ -46,7 +46,6 @@ const EditCategory = () => {
   };
 
   const handleAddProducts = async (productIds) => {
-    // Remove duplications by creating a unique set of IDs
     const uniqueProductIds = Array.from(new Set([
       ...linkedProducts.map((product) => product.product.id),
       ...productIds,
@@ -64,7 +63,7 @@ const EditCategory = () => {
       openSnackbar('Categoria atualizada com sucesso!');
       setTimeout(() => {
         closeSnackbar();
-        fetchCategoryData();  // Refetch data after successful update
+        fetchCategoryData();
       }, 3000);
     } else {
       openSnackbar('Erro ao atualizar categoria');

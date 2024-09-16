@@ -18,8 +18,8 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (email.validate() && password.validate()) {
-      await login(email.value, password.value).then(() => {
-        if(isAuthenticated) {
+      await login(email.value, password.value).then((response) => {
+        if(response.ok) {
             openSnackbar('Login efetuado com sucesso!');
             setTimeout(() => {
                 closeSnackbar();

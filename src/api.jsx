@@ -131,3 +131,67 @@ export function UPDATE_CATEGORY(category_id, body) {
     },
   };
 }
+
+export function GET_ORDERS() {
+  return {
+    url: API_URL + "/orders",
+    options: {
+      method: "GET",
+      headers: {
+        'Authorization': "Bearer " + token,
+      },
+    },
+  };
+}
+
+export function DETAIL_ORDER(order_id) {
+  return {
+    url: API_URL + `/orders/${order_id}`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  }
+}
+
+export function UPDATE_ORDER(order_id, body) {
+  return {
+    url: API_URL + `/orders/` + order_id,
+    options: {
+      method: "PUT",
+      body: body,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + token,
+      },
+    },
+  };
+}
+
+export function UPDATE_PRODUCT_STOCK(product_id, quantity) {
+  return {
+    url: API_URL + `/products/${product_id}/stock`,
+    options: {
+      method: "PUT",
+      body: JSON.stringify({ stock: quantity }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + token,
+      },
+    },
+  };
+}
+
+export function DELETE_ORDER(order_id) {
+  return {
+    url: API_URL + `/orders/${order_id}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  };
+}

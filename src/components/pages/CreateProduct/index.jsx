@@ -8,6 +8,7 @@ import { CREATE_PRODUCT } from "../../../api";
 import "./styles.css";
 import Button from "../../Button/Button";
 import DropDown from "../../DropDown/index"
+import { useSnackbar } from "react-simple-snackbar";
 
 const CreateProduct = () => {
   const name = useForm();
@@ -19,6 +20,8 @@ const CreateProduct = () => {
   const [isAvailable, setIsAvailable] = useState(false);
   const [imagePreview, setImagePreview] = useState("/src/assets/default.jpg");
   const [selectedFile, setSelectedFile] = useState(null);
+
+  const [openSnackbar, closeSnackbar] = useSnackbar();
 
   const toggleAvailable = () => {
     setIsAvailable((v) => !v);
@@ -72,11 +75,17 @@ const CreateProduct = () => {
       const response = await fetch(url, options);
       const data = await response.json();
 
-      if (response.ok) {
-        alert("Produto criado com sucesso!");
-      } else {
-        alert("Erro ao criar o produto: " + data.error);
-      }
+      if(response.ok) {
+        openSnackbar('Login efetuado com sucesso!');
+        setTimeout(() => {
+            closeSnackbar();
+        }, 3000);
+    } else {
+        openSnackbar('Dados incorretos!');
+        setTimeout(() => {
+            closeSnackbar();
+        }, 3000);
+    }
     } catch (error) {
       console.error("Erro ao criar o produto:", error);
     }
@@ -103,16 +112,10 @@ const CreateProduct = () => {
               onChange={handleImageChange}
             />
             <div className="card-main-form">
-              <Switch
-                label="Disponível?"
-                value={isAvailable}
-                setValue={toggleAvailable}
-              />
               <Input
                 type="number"
                 label="Estoque"
                 variant="secondary"
-                disabled={!isAvailable}
                 {...stock}
               />
             </div>

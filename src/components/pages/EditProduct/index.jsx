@@ -125,16 +125,10 @@ const EditProduct = () => {
                 onChange={handleImageChange}
               />
               <div className="card-main-form">
-                <Switch
-                  label="Disponível?"
-                  value={isAvailable}
-                  setValue={toggleAvailable}
-                />
                 <Input
                   type="number"
                   label="Estoque"
                   variant="secondary"
-                  disabled={!isAvailable}
                   {...stock}
                 />
               </div>

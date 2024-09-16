@@ -29,7 +29,7 @@ function App() {
                     
                 } />
 
-                <Route path="/details" element={
+                <Route path="/order/:id" element={
                     
                         <Details />
                     

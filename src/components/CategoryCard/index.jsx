@@ -11,7 +11,7 @@ const CategoryCard = ({ category, handleClick }) => {
       <div className='category-container'>
         <div className='category-span'>
           <span className='span1'>{category.name}</span>
-          <span>Produtos: </span>
+          <span>Produtos: {category?.products?.length}</span>
         </div>
         <div className='category-icon' onClick={handleClick}>
           <FaPen className="edit-icon" />
