@@ -20,7 +20,6 @@ function App() {
     return (
         <>
             {isAuthenticated && location.pathname !== "/" && <Navbar />}
-            <Navbar />
             <Routes>
                 <Route path="/" element={<Login />} />
 
@@ -75,7 +74,7 @@ function App() {
                 />
 
                 <Route
-                    path="/categories/edit"
+                    path="/categories/edit/:id"
                     element={
                         
                             <EditCategory />

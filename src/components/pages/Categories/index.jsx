@@ -5,12 +5,22 @@ import Button from "../../Button/Button";
 import CategoryCard from "../../CategoryCard/index"
 import './styles.css';
 import CategoryModal from "../CategoryModal/index";
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { GET_CATEGORIES } from "../../../api";
+import useFetch from "../../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
-  const categories = [{}, {}, {}, {}, {}, {}, {}, {}];
-
   const [categoryModal, setCategoryModal] = useState(false);
+  const navigate = useNavigate();
+  const { data, error, loading, request } = useFetch();
+
+  useEffect(() => {
+    const { url, options } = GET_CATEGORIES();
+    request(url, options);
+  }, [request]);
+
+  const categories = data || [];
 
   return (
     <Container>
@@ -33,7 +43,7 @@ const Categories = () => {
         <div className="categories-list">
           {categories.map((category, index) => {
             return (
-              <CategoryCard />
+              <CategoryCard handleClick={() => navigate(`../categories/edit/${category?.id}`)} key={index} category={category} />
             );
           })}
         </div>
