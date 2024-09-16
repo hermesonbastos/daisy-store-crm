@@ -22,7 +22,6 @@ const Products = () => {
   }, [request]);
 
   const products = data || [];
-
   return (
   <Container>
     <div className="products-list">

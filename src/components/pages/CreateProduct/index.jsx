@@ -15,8 +15,9 @@ const CreateProduct = () => {
   const price = useForm();
   const stock = useForm();
 
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [isAvailable, setIsAvailable] = useState(false);
-  const [imagePreview, setImagePreview] = useState("/src/assets/camisa.jpeg");
+  const [imagePreview, setImagePreview] = useState("/src/assets/default.jpg");
   const [selectedFile, setSelectedFile] = useState(null);
 
   const toggleAvailable = () => {
@@ -41,6 +42,10 @@ const CreateProduct = () => {
     }
   };
 
+  const handleCategoryChange = (categoryId) => {
+    setSelectedCategoryId(categoryId);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -49,11 +54,17 @@ const CreateProduct = () => {
       return;
     }
 
+    if (!selectedCategoryId) {
+      alert("Por favor, selecione uma categoria.");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("name", name.value);
     formData.append("description", description.value);
     formData.append("price", parseFloat(price.value));
     formData.append("stock", parseInt(stock.value, 10));
+    formData.append("categories", JSON.stringify([selectedCategoryId]));
     formData.append("image", selectedFile);
 
     try {
@@ -69,7 +80,6 @@ const CreateProduct = () => {
     } catch (error) {
       console.error("Erro ao criar o produto:", error);
     }
-
   };
 
   return (
@@ -129,11 +139,11 @@ const CreateProduct = () => {
               name="price"
               {...price}
             />
-            <DropDown/>
+            <DropDown selectedCategory={selectedCategoryId} onCategoryChange={handleCategoryChange} />
           </div>
           <Button
             name="Criar Produto"
-            onClick={handleSubmit} // Usa a função de submit já existente
+            onClick={handleSubmit}
           />
         </div>
       </form>

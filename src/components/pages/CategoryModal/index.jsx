@@ -8,7 +8,7 @@ import useForm from "../../../hooks/useForm";
 import { CREATE_CATEGORY } from "../../../api";
 import { useSnackbar } from "react-simple-snackbar";
 
-const CategoryModal = ({ showModal, setShowModal }) => {
+const CategoryModal = ({ showModal, setShowModal, onCategoryCreated }) => {
   const name = useForm();
   const description = useForm();
   const [openSnackbar, closeSnackbar] = useSnackbar();
@@ -16,30 +16,31 @@ const CategoryModal = ({ showModal, setShowModal }) => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-  
+
     if (name.validate() && description.validate()) {
       const body = JSON.stringify({
         name: name.value,
         description: description.value,
       });
-      
+
       const { url, options } = CREATE_CATEGORY(body);
       const { response } = await request(url, options);
-  
+
       if (response.ok) {
         setShowModal(false);
         openSnackbar('Categoria criada com sucesso!');
         setTimeout(() => {
-            closeSnackbar();
+          closeSnackbar();
+          onCategoryCreated();  // Call the callback to refetch categories
         }, 3000);
 
         let body = document.querySelector("body");
         body.style.overflow = "auto";
       } else {
         openSnackbar('Erro ao criar categoria');
-          setTimeout(() => {
-              closeSnackbar();
-          }, 3000);
+        setTimeout(() => {
+          closeSnackbar();
+        }, 3000);
       }
     }
   }

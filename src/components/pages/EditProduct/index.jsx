@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useForm from "../../../hooks/useForm";
 import Input from "../../Input/Input";
 import Container from "../../Layout/Container";
 import PageTitle from "../../PageTitle";
 import Switch from "../../Switch/Switch";
 import Button from "../../Button/Button";
+import DropDown from "../../DropDown/index";
 import { DETAIL_PRODUCT, UPDATE_PRODUCT } from "../../../api";
 import "./styles.css";
 import useFetch from "../../../hooks/useFetch";
+import { useSnackbar } from "react-simple-snackbar";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -19,26 +21,38 @@ const EditProduct = () => {
   const [isAvailable, setIsAvailable] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
-
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+  const [categoryName, setCategoryName] = useState(null);
   const { data, error, loading, request } = useFetch();
+
+  const [openSnackbar, closeSnackbar] = useSnackbar();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const { url, options } = DETAIL_PRODUCT(id);
-    function detailProduct() {
-      request(url, options).then((response) => {
-        if (response && response.json) {
-            const { name: prodName, description: prodDesc, price: prodPrice, stock: prodStock, images } = response.json;
-            name.setValue(prodName);
-            description.setValue(prodDesc);
-            price.setValue(prodPrice);
-            stock.setValue(prodStock);
-            setImagePreview(images[0].image.link);
-            setIsAvailable(prodStock > 0);
-        }
-      });
+    async function detailProduct() {
+      try {
+        const response = await request(url, options);
+        const { name: prodName, description: prodDesc, price: prodPrice, stock: prodStock, images, categories } = response.json;
+
+        name.setValue(prodName);
+        description.setValue(prodDesc);
+        price.setValue(prodPrice);
+        stock.setValue(prodStock);
+        setImagePreview(images[0].image.link);
+        setIsAvailable(prodStock > 0);
+        setSelectedCategoryId(categories[0]?.category?.id);
+        setCategoryName(categories[0]?.category?.name);
+      } catch (error) {
+        console.error("Erro ao carregar o produto:", error);
+      }
     }
     detailProduct();
   }, [id, request]);
+
+  const handleCategoryChange = (categoryId) => {
+    setSelectedCategoryId(categoryId);
+  };
 
   const toggleAvailable = () => {
     setIsAvailable((v) => !v);
@@ -65,20 +79,26 @@ const EditProduct = () => {
     formData.append("description", description.value);
     formData.append("price", parseFloat(price.value));
     formData.append("stock", parseInt(stock.value, 10));
+    formData.append("categories", JSON.stringify([selectedCategoryId]));
     if (selectedFile) {
       formData.append("image", selectedFile);
     }
-
-    console.log(name.value)
 
     const { url, options } = UPDATE_PRODUCT(id, formData);
     try {
       const { response, json } = await request(url, options);
 
-      if (response.ok) {
-        alert("Produto atualizado com sucesso!");
+      if (response?.ok) {
+        openSnackbar('Categoria atualizada com sucesso!');
+        setTimeout(() => {
+          closeSnackbar();
+        }, 3000);
+        navigate("/products");
       } else {
-        alert("Erro ao atualizar o produto: " + json.error);
+        openSnackbar('Erro ao atualizar categoria');
+        setTimeout(() => {
+          closeSnackbar();
+        }, 3000);
       }
     } catch (error) {
       console.error("Erro ao atualizar o produto:", error);
@@ -141,6 +161,7 @@ const EditProduct = () => {
                 name="price"
                 {...price}
               />
+              <DropDown defaultValue={categoryName} selectedCategory={selectedCategoryId} onCategoryChange={handleCategoryChange} />
             </div>
             <Button name="Salvar Alterações" />
           </div>
