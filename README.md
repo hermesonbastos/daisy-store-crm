@@ -1,4 +1,5 @@
 # Daisy Store CRM (React + Vite)
+![logo](src/assets/logo.png)
 
 Bem vindo dev, esse é o lado do administardor do Daisy Store, aqui o administrador poderá realizar operações CRUD de maioria das entidades e principalmente monitorar os pedidos e estoque:
 
