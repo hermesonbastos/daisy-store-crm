@@ -1,4 +1,25 @@
 * {
   margin: 0px;
-  padding: 0px
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --daisy-primary: #C4344C;
+  --daisy-secondary: #FFE4EE;
+  --daisy-pink2: #FF9EC2;
+  --daisy-pink3: #FCC0D6;
+  --daisy-pink4: #FFD1E2;
+  --daisy-pink5: #FEEDF3;
+  --daisy-pink6: #FFF5F9;
+  --daisy-brown: #7C606A;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--daisy-pink6);
+}
+
+*:focus {
+  outline: none;
 }

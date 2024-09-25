@@ -1,0 +1,58 @@
+.frame{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--daisy-secondary);
+}
+
+.banner{
+    height: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form{
+    height: 55%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px 0px 0px 0px;
+    background-color: var(--daisy-primary);
+    gap: 30px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+
+
+@media (max-width: 768px) {
+    .form-content {
+        width: 60%;
+    }
+}
+
+#logo{
+    margin-left: 40px;
+}
+
+#button-text{
+    color: aliceblue;
+    font-size: small;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

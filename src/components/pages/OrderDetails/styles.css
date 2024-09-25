@@ -1,0 +1,129 @@
+.details-container{
+    margin-top: 108px;
+}
+
+.details-info{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--daisy-brown);
+    font-size: 20px;
+}
+
+.details-order{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--daisy-primary);
+    width: 100%;
+    height: 20%;
+    border-radius: 90px 0px 0px 0px;
+    margin-top: 20px;
+
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+}
+
+.details-btn {
+    display: flex;
+    margin-inline: 40px;
+    align-self: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.btn{
+    width: 30%;
+}
+
+.details-product {
+    padding: 30px;
+    margin-bottom: 130px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;   
+}
+
+#span1{
+    font-size: 50px;
+    color: var(--daisy-brown);
+}
+
+#span2{
+    font-size: xx-large;
+    color: var(--daisy-pink5);
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 70px;
+    margin-top: 30px;
+}
+
+#span3{
+    color: var(--daisy-pink5);
+    font-size: large;
+}
+
+@media(max-width: 768px) {
+
+    .details-btn {
+        gap: 10px;
+    }
+
+    .details-container {
+        margin-top: 108px;
+        height: 100%;
+    }
+
+    .details-info {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: var(--daisy-brown);
+        width: 100%;
+    }
+
+    .details-order {
+        flex-direction: column;
+        background-color: var(--daisy-primary);
+        width: 100%;
+        height: 20%;
+        border-radius: 60px 0px 0px 0px;
+    }
+
+    .details-btn {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .btn{
+        width: 60%;
+    }
+
+    .details-product {
+        padding: 20px;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        margin-bottom: 170px;
+    }
+
+    #span1 {
+        font-size: 25px;
+    }
+
+    #span2 {
+        font-size: x-large;
+        margin-right: 40px;
+        margin-top: 20px;
+    }
+
+    #span3 {
+        color: var(--daisy-pink5);
+        text-align: center;
+    }
+}
